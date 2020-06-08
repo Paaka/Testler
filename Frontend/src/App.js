@@ -1,11 +1,21 @@
 import React from 'react';
-import Sidebar from './components/Organisms/Sidebar/Sidebar';
+import Routes from './Routes/Routes';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import BasicView from './views/BasicView';
+import NewSetView from './views/NewSetView';
 
 function App() {
   return (
-    <div className="App">
-       <Sidebar />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path={Routes.main}>
+          <BasicView></BasicView>
+        </Route>
+        <Route path={Routes.newset}>
+          <NewSetView></NewSetView>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

@@ -1,0 +1,15 @@
+@import '../../../constants/Colors.scss';
+
+.ButtonWithLabel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover{
+        background-color:$primary-light;
+        border-radius: 20px;
+    }
+}
