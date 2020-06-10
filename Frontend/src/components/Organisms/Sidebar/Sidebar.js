@@ -8,10 +8,10 @@ import Routes from '../../../Routes/Routes';
 const Sidebar = props => {
     return(
     <div className="SidebarWrapper">
-        <Link to={Routes.main}>
+        <Link to={Routes.main} style={{textDecoration:'none'}}>
             <H2>Testler</H2>
         </Link>
-        <Link to={Routes.newset}> 
+        <Link to={Routes.newset} style={{textDecoration:'none'}}> 
             <ButtonWithLabel path={require('../../../assets/new.svg')}>
                Create
             </ButtonWithLabel>
