@@ -3,7 +3,6 @@ import './StyledInput.scss';
 
 const StyledInput = ({
     id,
-    myRef=null,
     type="text",
     placeholder="",
     labelValue="",
@@ -18,7 +17,6 @@ const StyledInput = ({
     <div>
         <input 
             id={id}
-            ref={myRef}
             type={type} 
             onChange={onChangeHanlder}
             placeholder={placeholder}
