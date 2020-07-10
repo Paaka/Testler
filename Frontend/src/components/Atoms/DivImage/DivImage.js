@@ -1,8 +1,13 @@
 import React from 'react';
-import './DivImage.scss';
+import styled from 'styled-components';
+
+const StyledImg = styled.img`
+    width: 18px;
+    height: 18px;
+`
 
 const DivImage = ({path}) => {
-    return(<img className="DivImage" src={path}></img>)
+    return(<StyledImg className="DivImage" src={path}/>)
 }
 
 export default DivImage

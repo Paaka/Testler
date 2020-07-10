@@ -1,8 +1,13 @@
 import React from 'react';
-import './H2.scss';
+import styled from 'styled-components';
 
-const StyledH2 = ({color="", children}) => {
-    return <h2 className={`styledH2 ${color}`}>{children}</h2>
+const H2 = styled.h2`
+    color: ${props => props.color};
+    font-size:24px;
+`
+
+const StyledH2 = ({color="#ebebeb", children}) => {
+    return <H2 color={color}>{children}</H2>
 }
 
 export default StyledH2;

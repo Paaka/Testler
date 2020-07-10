@@ -1,6 +1,12 @@
 import React from 'react';
-import './Paragraph.scss';
+import colors from '../../../../constants/colors';
+import styled from 'styled-components';
 
-const Paragraph = ({children}) => <p className="Paragraph">{children}</p>
+const StyledParagraph = styled.p`
+    color: ${colors.white};
+    font-size:16px;
+`
+
+const Paragraph = ({children}) => <StyledParagraph>{children}</StyledParagraph>
 
 export default Paragraph;

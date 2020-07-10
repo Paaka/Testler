@@ -1,10 +1,32 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import MainTemplate from '../../templates/MainTemplate';
-import './NewSetView.scss';
 import StyledH2 from '../../components/Atoms/Typography/H2/H2';
 import StyledInput from '../../components/Atoms/StyledInput/StyledInput';
 import Button from '../../components/Atoms/Button/Button';
 import NewFisheItem from '../../components/Organisms/NewFicheItem/NewFisheItem';
+import colors from '../../constants/colors';
+
+
+const NewSetWrapper = styled.div`
+    background-color: ${colors.white};
+    padding: 2rem;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+`
+
+const SetTitleAndDescription = styled.div`
+    margin: 10px 0;
+    width: 50%;
+`
+
+const RightButtonWrapper = styled.div`
+    position: absolute;
+    right: 10px;
+    top:10px;
+`
 
 const NewSetView = () => {
 
@@ -14,9 +36,9 @@ const NewSetView = () => {
 
     return (
     <MainTemplate>
-        <div className="newSetWrapper">
+        <NewSetWrapper>
             <StyledH2 color="black">Create new set :</StyledH2>
-            <div className="titleAndDescriptionWrapper">
+            <SetTitleAndDescription>
             <StyledInput
                 id="Title"
                 placeholder={`Enter title, for example : "Javascript is the Best".`}
@@ -25,13 +47,12 @@ const NewSetView = () => {
                 id="setDesription"
                 placeholder={`Add additional description, "Vocabulary to French test."`}
                 labelValue="Description" />
-                
-            </div>
-            <div className="rightTopPosition">
+            </SetTitleAndDescription>
+            <RightButtonWrapper>
                <Button onClickFn={createNewSet}>Create</Button>
-            </div>
+            </RightButtonWrapper>
             <NewFisheItem> </NewFisheItem>
-        </div>
+        </NewSetWrapper>
     </MainTemplate>
     );
 };
