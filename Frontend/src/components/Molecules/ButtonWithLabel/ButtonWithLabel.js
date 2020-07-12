@@ -6,16 +6,20 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 10px;
     cursor: pointer;
     transition: all .2s;
+    margin:0px 10px;
 
     &:hover{
         background-color:${colors.primaryLight};
         border-radius: 20px;
     }
+`
+
+const TextContainer = styled.div`
+    margin-left:5px;
 `
 
 const ButtonWithLabel = ({children, onClickFn = ()=>{}, path}) =>{
@@ -26,7 +30,9 @@ const ButtonWithLabel = ({children, onClickFn = ()=>{}, path}) =>{
     return(
         <Wrapper onClick={onClickHandler}>
             <DivImage path={path}/>
-            <Paragraph>{children}</Paragraph>
+            <TextContainer>
+                <Paragraph>{children}</Paragraph>
+            </TextContainer>
         </Wrapper>
     )
 }

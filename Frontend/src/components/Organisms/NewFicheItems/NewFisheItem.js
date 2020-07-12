@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import StyledH2 from '../../Atoms/Typography/H2/H2';
 import trashSVG from '../../../assets/trash.svg';
-import dragSVG from '../../../assets/drag.svg';
+import deleteSVG from '../../../assets/criss-cross.svg';
 import ButtonIcon from '../../Atoms/ButtonIcon/ButtonIcon';
 import StyledInput from '../../Atoms/StyledInput/StyledInput';
 
@@ -42,9 +42,6 @@ const NewFisheItem = ({fisheNumber=0}) => {
         console.log(`delet this`);
     }
 
-    const dragFisheHandler = () => {
-        console.log(`drag this`);
-    }
 
     return(
     <Container>
@@ -52,13 +49,9 @@ const NewFisheItem = ({fisheNumber=0}) => {
             <StyledH2 color="black">{fisheNumber}</StyledH2>
             <FlexWrapper>
             <ButtonIcon 
-                icon={trashSVG} 
+                icon={deleteSVG} 
                 onClickFn={deleteFisheHandler}
-                alt="Delete item" />
-            <ButtonIcon 
-                icon={dragSVG} 
-                onClickFn={dragFisheHandler}
-                alt="Drag item" />
+                alt="Delete Fishe" />
             </FlexWrapper>
         </ContainerHeader>
         <ContnainerBody>

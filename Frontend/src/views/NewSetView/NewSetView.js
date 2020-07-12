@@ -5,8 +5,9 @@ import MainTemplate from '../../templates/MainTemplate';
 import StyledH2 from '../../components/Atoms/Typography/H2/H2';
 import StyledInput from '../../components/Atoms/StyledInput/StyledInput';
 import Button from '../../components/Atoms/Button/Button';
-import NewFisheItem from '../../components/Organisms/NewFicheItem/NewFisheItem';
+import NewFisheItem from '../../components/Organisms/NewFicheItems/NewFisheItem';
 import colors from '../../constants/colors';
+import NewSetBtn from '../../components/Organisms/NewFicheItems/NewSetBtn';
 
 
 const NewSetWrapper = styled.div`
@@ -52,6 +53,7 @@ const NewSetView = () => {
                <Button onClickFn={createNewSet}>Create</Button>
             </RightButtonWrapper>
             <NewFisheItem> </NewFisheItem>
+            <NewSetBtn></NewSetBtn>
         </NewSetWrapper>
     </MainTemplate>
     );

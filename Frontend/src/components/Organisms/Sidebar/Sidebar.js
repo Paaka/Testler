@@ -22,7 +22,7 @@ const Sidebar = props => {
             <H2>Testler</H2>
         </Link>
         <Link to={Routes.newset} style={{textDecoration:'none'}}> 
-            <ButtonWithLabel path={require('../../../assets/new.svg')}>
+            <ButtonWithLabel path={require('../../../assets/add.svg')}>
                Create
             </ButtonWithLabel>
         </Link>
