@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import MainTemplate from '../../templates/MainTemplate';
@@ -14,7 +14,7 @@ const NewSetWrapper = styled.div`
     background-color: ${colors.white};
     padding: 2rem;
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     position: relative;
 `
 
@@ -31,8 +31,22 @@ const RightButtonWrapper = styled.div`
 
 const NewSetView = () => {
 
+
+    const [initalState, setIntialState] = useState([{index:1},{index:2},{index:3}]);
+
     const createNewSet = () => {
         console.log('Work');
+    }
+
+    const addNewFisheHandler = () => {
+        const value = initalState.length+1;
+        setIntialState(state => [...state, {index:value}]);
+    }
+
+    const deleteFisheHandler = (idToDelete) => {
+        const newState = initalState.filter(fishe => fishe.index !== idToDelete);
+        newState.map((fishe, index) => fishe.index = index +1);
+        setIntialState(newState);
     }
 
     return (
@@ -52,8 +66,8 @@ const NewSetView = () => {
             <RightButtonWrapper>
                <Button onClickFn={createNewSet}>Create</Button>
             </RightButtonWrapper>
-            <NewFisheItem> </NewFisheItem>
-            <NewSetBtn></NewSetBtn>
+            {initalState.map(fishe => <NewFisheItem deleteFn={deleteFisheHandler} key={fishe.index} fisheNumber={fishe.index}/>) }
+            <NewSetBtn onClickFn={addNewFisheHandler}></NewSetBtn>
         </NewSetWrapper>
     </MainTemplate>
     );

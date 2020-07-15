@@ -1,12 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import StyledH2 from '../../Atoms/Typography/H2/H2';
-import trashSVG from '../../../assets/trash.svg';
 import deleteSVG from '../../../assets/criss-cross.svg';
 import ButtonIcon from '../../Atoms/ButtonIcon/ButtonIcon';
 import StyledInput from '../../Atoms/StyledInput/StyledInput';
 
+const CardAnimation = keyframes`
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+`
+
 const Container = styled.div`
+    animation: 0.2s ${CardAnimation} ease-in;
     margin-top: 10px;
 `
 
@@ -16,6 +25,7 @@ const ContainerHeader = styled.div`
     justify-content: space-between;
     padding: 5px;
     background-color: white;    
+    
 `
 
 const FlexWrapper = styled.div`
@@ -37,9 +47,9 @@ const FormItem = styled.div`
     margin-left:20px;
 `
 
-const NewFisheItem = ({fisheNumber=0}) => {
+const NewFisheItem = ({fisheNumber=0, deleteFn}) => {
     const deleteFisheHandler = () => {
-        console.log(`delet this`);
+        deleteFn(fisheNumber);
     }
 
 

@@ -31,14 +31,14 @@ const Container = styled.div`
 
 
 
-const NewSetBtn = () => {
+const NewSetBtn = ({onClickFn}) => {
     const clickHandler = () =>{
-        console.log('work');
+        onClickFn();
     }
 
     return(
     <Container onClick={clickHandler}>
-        <StyledText>+ Add Set</StyledText>
+        <StyledText>+ Add Fishe</StyledText>
     </Container>
     )
 }
