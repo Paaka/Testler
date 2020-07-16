@@ -11,7 +11,7 @@ import AddIcon from '../../../assets/add-bl.svg'
 const Wrapper = styled.div`
     margin-left:5vw;
     background-color:white;
-    width:15vw;
+    width:20vw;
     height:90vh;
 `
 

@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     margin-top:2px;
 
     :hover{
-        background-color:${colors.secondaryDarken};
+        background-color:${colors.secondary};
     }
 `
 
