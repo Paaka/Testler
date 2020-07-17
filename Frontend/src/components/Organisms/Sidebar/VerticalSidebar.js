@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SidebarLink from '../../Atoms/SidebarLink/SidebarLink';
 import Routes from '../../../Routes/Routes';
 //svgs
+import SetsIcon from '../../../assets/document.svg'
 import HomeIcon from '../../../assets/home-run.svg'
 import AddIcon from '../../../assets/add-bl.svg'
 
@@ -24,6 +25,16 @@ const VerticalSidebar = () => {
             linkPath={Routes.newset}
             icon={AddIcon}>
             Create
+        </SidebarLink>
+        <SidebarLink 
+            linkPath={Routes.newset}
+            icon={SetsIcon}>
+            Your sets
+        </SidebarLink>
+        <SidebarLink 
+            linkPath={Routes.newset}
+            icon={SetsIcon}>
+            Your sets
         </SidebarLink>
     </Wrapper>)
 }

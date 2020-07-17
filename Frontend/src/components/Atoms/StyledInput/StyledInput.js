@@ -34,12 +34,17 @@ const StyledInput = ({
     type="text",
     placeholder="",
     labelValue="",
+    value="",
+    someFn=()=>{},
 }) => {
-    const [value, setValue] = useState('');
+    const [inputValue, setValue] = useState(value);
 
     const onChangeHanlder = (e) => {
         setValue(e.target.value);
+        someFn(e.target.value)
     };
+
+    
 
     return(
     <div>
@@ -48,7 +53,7 @@ const StyledInput = ({
             type={type} 
             onChange={onChangeHanlder}
             placeholder={placeholder}
-            value={value} 
+            value={inputValue} 
            
             />
         <StyledLabel htmlFor={id}>

@@ -47,11 +47,11 @@ const FormItem = styled.div`
     margin-left:20px;
 `
 
-const NewFisheItem = ({fisheNumber=0, deleteFn}) => {
+const NewFisheItem = ({fisheNumber=0,titleValue, deleteFn}) => {
+
     const deleteFisheHandler = () => {
         deleteFn(fisheNumber);
     }
-
 
     return(
     <Container>
@@ -68,6 +68,7 @@ const NewFisheItem = ({fisheNumber=0, deleteFn}) => {
             <FormItem>
                 <StyledInput 
                     id={`concept-${fisheNumber}`} 
+                    value={titleValue}
                     labelValue="concept" />
             </FormItem>
             <FormItem>

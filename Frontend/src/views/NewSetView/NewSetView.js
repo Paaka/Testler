@@ -30,12 +30,26 @@ const RightButtonWrapper = styled.div`
 `
 
 const NewSetView = () => {
+    const [title,setTitle] = useState('');
+    const [description, setDescription] = useState('');
 
+    const [initalState, setIntialState] = useState([
+        {
+            index:1,
+            concept:"123"
+        },
+        {
+            index:2,
+            concept:'No ciekawe'
+        },
+        {
+            index:3,
+            concept:'xxx'
+        }
+    ]);
 
-    const [initalState, setIntialState] = useState([{index:1},{index:2},{index:3}]);
-
-    const createNewSet = () => {
-        console.log('Work');
+    const createNewSet = (e) => {
+        console.log(title, description);
     }
 
     const addNewFisheHandler = () => {
@@ -45,8 +59,16 @@ const NewSetView = () => {
 
     const deleteFisheHandler = (idToDelete) => {
         const newState = initalState.filter(fishe => fishe.index !== idToDelete);
-        newState.map((fishe, index) => fishe.index = index +1);
+        const deleting = initalState[idToDelete];
+        newState.map((fishe, index) => {
+            fishe.index = index +1
+            console.log(initalState[index])
+        });
         setIntialState(newState);
+    }
+
+    const onChangeInputHandler = (value,updatingFn) => {
+        updatingFn(value);
     }
 
     return (
@@ -55,18 +77,24 @@ const NewSetView = () => {
             <StyledH2 color="black">Create new set :</StyledH2>
             <SetTitleAndDescription>
             <StyledInput
-                id="Title"
+                value={title}
                 placeholder={`Enter title, for example : "Javascript is the Best".`}
-                labelValue="Title" />
+                labelValue="Title"
+                someFn={(val)=>onChangeInputHandler(val,setTitle)} />
             <StyledInput
-                id="setDesription"
+                value={description}
                 placeholder={`Add additional description, "Vocabulary to French test."`}
-                labelValue="Description" />
+                labelValue="Description"
+                someFn={(val)=> onChangeInputHandler(val, setDescription)} />
             </SetTitleAndDescription>
             <RightButtonWrapper>
                <Button onClickFn={createNewSet}>Create</Button>
             </RightButtonWrapper>
-            {initalState.map(fishe => <NewFisheItem deleteFn={deleteFisheHandler} key={fishe.index} fisheNumber={fishe.index}/>) }
+            {initalState.map(fishe => <NewFisheItem 
+                titleValue={fishe.concept}
+                deleteFn={deleteFisheHandler} 
+                key={fishe.index} 
+                fisheNumber={fishe.index}/>) }
             <NewSetBtn onClickFn={addNewFisheHandler}></NewSetBtn>
         </NewSetWrapper>
     </MainTemplate>
