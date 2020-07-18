@@ -55,9 +55,9 @@ const RightMargin = styled.div`
     margin-left:5px;
 `
 
-const MainCard = ({card}) => {
+const MainCard = ({card, linkPath}) => {
     return (
-        <NavLink style={{textDecoration:"none"}} to="/">
+        <NavLink style={{textDecoration:"none"}} to={linkPath}>
             <Container>
                 <div>
                 <Heading>Zestaw</Heading>

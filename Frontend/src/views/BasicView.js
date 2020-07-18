@@ -38,10 +38,10 @@ const BasicView = () => {
                 <RightPartWrapper>
                     <StyledH2 color="Black">Your's last viewed sets :</StyledH2>
                     <GridWrapper>
-                        <MainCard/>
-                        <MainCard/>
-                        <MainCard/>
-                        <MainCard/>
+                        <MainCard linkPath="/set/0"/>
+                        <MainCard linkPath="/set/0"/>
+                        <MainCard linkPath="/set/0"/>
+                        <MainCard linkPath="/set/0"/>
                     </GridWrapper>
                 </RightPartWrapper>
             </BackgroundWrapper>

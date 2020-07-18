@@ -3,6 +3,7 @@ import Routes from './Routes/Routes';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import BasicView from './views/BasicView';
 import NewSetView from './views/NewSetView/NewSetView';
+import SetView from './views/SetView/SetView';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         </Route>
         <Route path={Routes.newset}>
           <NewSetView></NewSetView>
+        </Route>
+        <Route path={Routes.set}>
+          <SetView></SetView>
         </Route>
       </Switch>
     </Router>

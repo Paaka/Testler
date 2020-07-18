@@ -19,7 +19,7 @@ const Sidebar = props => {
     return(
     <Wrapper>
         <Link to={Routes.main} style={{textDecoration:'none'}}>
-            <H2>Testler</H2>
+            <H2 color={colors.lightGray}>Testler</H2>
         </Link>
         <Link to={Routes.newset} style={{textDecoration:'none'}}> 
             <ButtonWithLabel path={require('../../../assets/add.svg')}>
